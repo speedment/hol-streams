@@ -183,4 +183,20 @@
         </dependency>
     </dependencies>
 
+    <repositories>
+        <repository>
+            <id>speedment-enterprise</id>
+            <name>Speedment Enterprise Repositories</name>
+            <url>https://repo.speedment.com/nexus/content/repositories/releases/</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>speedment-enterprise</id>
+            <name>Speedment Enterprise Repositories</name>
+            <url>https://repo.speedment.com/nexus/content/repositories/releases/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
 </project>
