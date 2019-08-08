@@ -1,0 +1,123 @@
+package com.speedment.example.domainmodel.sakila.generated;
+
+import com.speedment.common.annotation.GeneratedCode;
+import com.speedment.common.injector.Injector;
+import com.speedment.example.domainmodel.sakila.SakilaApplication;
+import com.speedment.example.domainmodel.sakila.SakilaApplicationBuilder;
+import com.speedment.example.domainmodel.sakila.SakilaApplicationImpl;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.actor.ActorManagerImpl;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.actor.ActorSqlAdapter;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.actor_info.ActorInfoManagerImpl;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.actor_info.ActorInfoSqlAdapter;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.address.AddressManagerImpl;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.address.AddressSqlAdapter;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.category.CategoryManagerImpl;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.category.CategorySqlAdapter;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.city.CityManagerImpl;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.city.CitySqlAdapter;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.country.CountryManagerImpl;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.country.CountrySqlAdapter;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.customer.CustomerManagerImpl;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.customer.CustomerSqlAdapter;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.customer_list.CustomerListManagerImpl;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.customer_list.CustomerListSqlAdapter;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.film.FilmManagerImpl;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.film.FilmSqlAdapter;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.film_actor.FilmActorManagerImpl;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.film_actor.FilmActorSqlAdapter;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.film_category.FilmCategoryManagerImpl;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.film_category.FilmCategorySqlAdapter;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.film_list.FilmListManagerImpl;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.film_list.FilmListSqlAdapter;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.film_text.FilmTextManagerImpl;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.film_text.FilmTextSqlAdapter;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.inventory.InventoryManagerImpl;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.inventory.InventorySqlAdapter;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.language.LanguageManagerImpl;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.language.LanguageSqlAdapter;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.nicer_but_slower_film_list.NicerButSlowerFilmListManagerImpl;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.nicer_but_slower_film_list.NicerButSlowerFilmListSqlAdapter;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.payment.PaymentManagerImpl;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.payment.PaymentSqlAdapter;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.rental.RentalManagerImpl;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.rental.RentalSqlAdapter;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.sales_by_film_category.SalesByFilmCategoryManagerImpl;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.sales_by_film_category.SalesByFilmCategorySqlAdapter;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.sales_by_store.SalesByStoreManagerImpl;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.sales_by_store.SalesByStoreSqlAdapter;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.staff.StaffManagerImpl;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.staff.StaffSqlAdapter;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.staff_list.StaffListManagerImpl;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.staff_list.StaffListSqlAdapter;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.store.StoreManagerImpl;
+import com.speedment.example.domainmodel.sakila.sakila.sakila.store.StoreSqlAdapter;
+import com.speedment.runtime.application.AbstractApplicationBuilder;
+
+/**
+ * A generated base {@link
+ * com.speedment.runtime.application.AbstractApplicationBuilder} class for the
+ * {@link com.speedment.runtime.config.Project} named sakila.
+ * <p>
+ * This file has been automatically generated by Speedment. Any changes made to
+ * it will be overwritten.
+ * 
+ * @author Speedment
+ */
+@GeneratedCode("Speedment")
+public abstract class GeneratedSakilaApplicationBuilder extends AbstractApplicationBuilder<SakilaApplication, SakilaApplicationBuilder> {
+    
+    protected GeneratedSakilaApplicationBuilder() {
+        super(SakilaApplicationImpl.class, GeneratedSakilaMetadata.class);
+        withManager(ActorManagerImpl.class);
+        withManager(AddressManagerImpl.class);
+        withManager(CategoryManagerImpl.class);
+        withManager(CityManagerImpl.class);
+        withManager(CountryManagerImpl.class);
+        withManager(CustomerManagerImpl.class);
+        withManager(FilmManagerImpl.class);
+        withManager(FilmActorManagerImpl.class);
+        withManager(FilmCategoryManagerImpl.class);
+        withManager(FilmTextManagerImpl.class);
+        withManager(InventoryManagerImpl.class);
+        withManager(LanguageManagerImpl.class);
+        withManager(PaymentManagerImpl.class);
+        withManager(RentalManagerImpl.class);
+        withManager(StaffManagerImpl.class);
+        withManager(StoreManagerImpl.class);
+        withManager(ActorInfoManagerImpl.class);
+        withManager(CustomerListManagerImpl.class);
+        withManager(FilmListManagerImpl.class);
+        withManager(NicerButSlowerFilmListManagerImpl.class);
+        withManager(SalesByFilmCategoryManagerImpl.class);
+        withManager(SalesByStoreManagerImpl.class);
+        withManager(StaffListManagerImpl.class);
+        withComponent(ActorSqlAdapter.class);
+        withComponent(AddressSqlAdapter.class);
+        withComponent(CategorySqlAdapter.class);
+        withComponent(CitySqlAdapter.class);
+        withComponent(CountrySqlAdapter.class);
+        withComponent(CustomerSqlAdapter.class);
+        withComponent(FilmSqlAdapter.class);
+        withComponent(FilmActorSqlAdapter.class);
+        withComponent(FilmCategorySqlAdapter.class);
+        withComponent(FilmTextSqlAdapter.class);
+        withComponent(InventorySqlAdapter.class);
+        withComponent(LanguageSqlAdapter.class);
+        withComponent(PaymentSqlAdapter.class);
+        withComponent(RentalSqlAdapter.class);
+        withComponent(StaffSqlAdapter.class);
+        withComponent(StoreSqlAdapter.class);
+        withComponent(ActorInfoSqlAdapter.class);
+        withComponent(CustomerListSqlAdapter.class);
+        withComponent(FilmListSqlAdapter.class);
+        withComponent(NicerButSlowerFilmListSqlAdapter.class);
+        withComponent(SalesByFilmCategorySqlAdapter.class);
+        withComponent(SalesByStoreSqlAdapter.class);
+        withComponent(StaffListSqlAdapter.class);
+    }
+    
+    @Override
+    public SakilaApplication build(Injector injector) {
+        return injector.getOrThrow(SakilaApplication.class);
+    }
+}
