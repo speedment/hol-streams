@@ -1,8 +1,8 @@
-package com.speedment.example.task;
+package com.speedment.example.unit;
 
 import com.speedment.runtime.core.Speedment;
 
-public interface DatabaseTask {
+public interface DatabaseUnit {
 
     /**
      * Returns the number of films in the database

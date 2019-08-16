@@ -1,10 +1,10 @@
 package com.speedment.example.solution;
 
 import com.speedment.example.domainmodel.sakila.sakila.sakila.film.FilmManager;
-import com.speedment.example.task.DatabaseTask;
+import com.speedment.example.unit.DatabaseUnit;
 import com.speedment.runtime.core.Speedment;
 
-public class MyDatabaseTask implements DatabaseTask {
+public class MyDatabaseUnit implements DatabaseUnit {
 
     @Override
     public long countFilms(Speedment speedment) {

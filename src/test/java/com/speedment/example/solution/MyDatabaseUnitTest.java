@@ -2,28 +2,19 @@ package com.speedment.example.solution;
 
 import com.speedment.example.domainmodel.sakila.SakilaApplicationBuilder;
 import com.speedment.example.domainmodel.sakila.sakila.sakila.film.FilmManager;
-import com.speedment.example.task.DatabaseTask;
-import com.speedment.example.task.StreamCreator;
+import com.speedment.example.unit.DatabaseUnit;
 import com.speedment.runtime.core.Speedment;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
-import java.util.List;
-import java.util.function.Function;
-import java.util.stream.BaseStream;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
-
-import static java.util.stream.Collectors.toList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotSame;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-final class MyDatabaseTaskTest {
+final class MyDatabaseUnitTest {
 
-    private final DatabaseTask instance = new MyDatabaseTask();
+    private final DatabaseUnit instance = new MyDatabaseUnit();
     private Speedment speedment;
     private FilmManager films;
 

@@ -14,7 +14,7 @@ final class TestUtil {
      * Tests a stream of any kind against a reference stream of the same type.
      *
      * @param instance from which to extract the stream
-     * @param referance stream
+     * @param reference stream
      * @param creator to apply when creating a new stream
      * @param collector  to apply to the two streams -> List
      * @param <I> Type of the instance from which streams are obtained
@@ -23,25 +23,25 @@ final class TestUtil {
      */
     static <I, T, S extends BaseStream> void tester(
         final I instance,
-        final S referance,
+        final S reference,
         final Function<I, S> creator,
         final Function<S, List<T>> collector
     ) {
-
+        // Create the stream to test
         final S stream = creator.apply(instance);
 
         // Make sure that the streams have the same parallel property
-        assertEquals(referance.isParallel(), stream.isParallel());
+        assertEquals(reference.isParallel(), stream.isParallel());
 
         // Make sure that streams are not reused
         assertNotSame(creator.apply(instance) , stream);
 
         // Make sure that the streams have the same content
-        final List<T> expected = collector.apply(referance);
+        final List<T> expected = collector.apply(reference);
         final List<T> actual = collector.apply(stream);
         assertEquals(expected, actual);
 
-        System.out.format("The stream content was %s%n", expected);
+        System.out.format("The stream content was %s%n", actual);
     }
 
 
