@@ -1,6 +1,11 @@
 package com.speedment.example.solution;
 
+import org.junit.jupiter.api.Assertions;
+
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
+import java.util.function.BiConsumer;
 import java.util.function.Function;
 import java.util.stream.BaseStream;
 
@@ -8,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
 
 final class TestUtil {
+
     private TestUtil() {}
 
     /**
@@ -41,7 +47,31 @@ final class TestUtil {
         final List<T> actual = collector.apply(stream);
         assertEquals(expected, actual);
 
-        System.out.format("The stream content was %s%n", actual);
+        printContent(actual);
+    }
+
+    static <T> void tester(final T expected, final T actual) {
+        tester(expected, actual, Assertions::assertEquals);
+    }
+
+    static <T> void tester(
+        final T expected,
+        final T actual,
+        final BiConsumer<T, T> asserter
+    ) {
+        asserter.accept(expected, actual);
+        TestUtil.printContent(actual);
+    }
+
+    static void printContent(Object actual) {
+        final String s;
+        if (actual.getClass().isArray()) {
+            s = Arrays.toString((Object[]) actual);
+        } else {
+            s = actual.toString();
+        }
+
+        System.out.format("The content was %s%n", s);
     }
 
 

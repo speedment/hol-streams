@@ -43,8 +43,8 @@ public class MyCreateUnit implements CreateUnit {
     }
 
     @Override
-    public IntStream infiniteRandomInts() {
-        return new Random().ints();
+    public IntStream infiniteRandomInts(Random rnd) {
+        return rnd.ints();
     }
 
     @Override
