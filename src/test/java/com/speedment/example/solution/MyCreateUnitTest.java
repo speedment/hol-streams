@@ -1,7 +1,10 @@
 package com.speedment.example.solution;
 
 import com.speedment.example.unit.CreateUnit;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -15,11 +18,13 @@ import java.util.stream.Stream;
 import static com.speedment.example.solution.TestUtil.tester;
 import static java.util.stream.Collectors.toList;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 final class MyCreateUnitTest {
 
     private final CreateUnit instance = new MyCreateUnit();
 
     @Test
+    @Order(0)
     void newStreamOfAToC() {
         tester(
             instance,
@@ -30,6 +35,7 @@ final class MyCreateUnitTest {
     }
 
     @Test
+    @Order(1)
     void intStreamOfOneToTen() {
         tester(
             instance,
@@ -40,6 +46,7 @@ final class MyCreateUnitTest {
     }
 
     @Test
+    @Order(2)
     void fromArray() {
         final String[] texts = {"Alpha", "Bravo", "Charlie"};
         tester(
@@ -51,6 +58,7 @@ final class MyCreateUnitTest {
     }
 
     @Test
+    @Order(3)
     void fromCollection() {
         final List<String> texts = Arrays.asList("Alpha", "Bravo", "Charlie");
         tester(
@@ -62,6 +70,7 @@ final class MyCreateUnitTest {
     }
 
     @Test
+    @Order(4)
     void fromString() {
         final String text = "Banana";
         tester(
@@ -74,6 +83,7 @@ final class MyCreateUnitTest {
 
 
     @Test
+    @Order(5)
     void infiniteAlternating() {
         final long limit = 19;
         tester(
@@ -85,6 +95,7 @@ final class MyCreateUnitTest {
     }
 
     @Test
+    @Order(6)
     void infiniteRandomInts() {
         final int seed = 42;
         final long limit = 19;
@@ -97,6 +108,7 @@ final class MyCreateUnitTest {
     }
 
     @Test
+    @Order(7)
     void linesFromPoemTxtFile() {
         tester(
             instance,

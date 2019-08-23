@@ -1,7 +1,10 @@
 package com.speedment.example.solution;
 
 import com.speedment.example.unit.IntermediateUnit;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 
 import static com.speedment.example.solution.TestUtil.tester;
 import static java.util.stream.Collectors.toList;
@@ -12,6 +15,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.IntStream;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 final class MyIntermediateUnitTest {
 
     private static final List<String> WORDS = Arrays.asList(
@@ -21,6 +25,7 @@ final class MyIntermediateUnitTest {
     private final IntermediateUnit instance = new MyIntermediateUnit();
 
     @Test
+    @Order(0)
     void wordsLongerThanThreeChars() {
         tester(
             instance,
@@ -31,6 +36,7 @@ final class MyIntermediateUnitTest {
     }
 
     @Test
+    @Order(1)
     void firstTwoWordsLongerThanThreeChars() {
         tester(
             instance,
@@ -41,6 +47,7 @@ final class MyIntermediateUnitTest {
     }
 
     @Test
+    @Order(2)
     void firstDistinctTwoWordsLongerThanThreeCharsInAlphabeticOrder() {
         tester(
             instance,
@@ -51,6 +58,7 @@ final class MyIntermediateUnitTest {
     }
 
     @Test
+    @Order(3)
     void lengthOfWords() {
         tester(
             instance,
@@ -61,6 +69,7 @@ final class MyIntermediateUnitTest {
     }
 
     @Test
+    @Order(4)
     void increasingSawtooth() {
         final long limit = 15;
         tester(
@@ -72,6 +81,7 @@ final class MyIntermediateUnitTest {
     }
 
     @Test
+    @Order(5)
     void strings() {
         final List<Object> OBJECTS = Arrays.asList("First", 21, new Random(42), new ArrayList<>(), "Last");
         tester(
@@ -81,7 +91,5 @@ final class MyIntermediateUnitTest {
             s -> s.collect(toList())
         );
     }
-
-
 
 }

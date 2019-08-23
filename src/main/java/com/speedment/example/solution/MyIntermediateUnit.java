@@ -5,7 +5,7 @@ import com.speedment.example.unit.IntermediateUnit;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class MyIntermediateUnit implements IntermediateUnit {
+public final class MyIntermediateUnit implements IntermediateUnit {
 
     @Override
     public Stream<String> wordsLongerThanThreeChars(Stream<String> stream) {

@@ -10,7 +10,7 @@ import java.util.Random;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class MyCreateUnit implements CreateUnit {
+public final class MyCreateUnit implements CreateUnit {
 
     @Override
     public Stream<String> newStreamOfAToC() {

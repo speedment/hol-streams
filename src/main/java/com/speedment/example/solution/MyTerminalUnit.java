@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.*;
 
-public class MyTerminalUnit implements TerminalUnit {
+public final class MyTerminalUnit implements TerminalUnit {
 
     @Override
     public void addToSet(Stream<String> stream, Set<String> set) {
