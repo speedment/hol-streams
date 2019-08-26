@@ -19,7 +19,7 @@ public final class MyCreateUnit implements CreateUnit {
 
     @Override
     public IntStream newIntStreamOfOneToSeven() {
-        return IntStream.range(0, 8);
+        return IntStream.range(1, 8);
     }
 
     @Override
@@ -50,7 +50,7 @@ public final class MyCreateUnit implements CreateUnit {
     @Override
     public Stream<String> linesFromPoemTxtFile() {
         try {
-            return Files.lines(Paths.get("poem.txt"));
+            return Files.lines(Paths.get(FILE_NAME));
         } catch (IOException ioe) {
             throw new RuntimeException(ioe);
         }

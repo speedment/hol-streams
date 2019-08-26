@@ -1,5 +1,6 @@
 package com.speedment.example.solution;
 
+import com.speedment.example.demo.Create;
 import com.speedment.example.unit.CreateUnit;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
@@ -39,7 +40,7 @@ final class MyCreateUnitTest {
     void intStreamOfOneToTen() {
         tester(
             instance,
-            IntStream.of(0, 1, 2, 3, 4, 5, 6, 7),
+            IntStream.of(1, 2, 3, 4, 5, 6, 7),
             CreateUnit::newIntStreamOfOneToSeven,
             s -> s.boxed().collect(toList())
         );
@@ -121,7 +122,7 @@ final class MyCreateUnitTest {
 
     private Stream<String> expectedLinesFromPoemTxtFile() {
         try {
-            return Files.lines(Paths.get("poem.txt"));
+            return Files.lines(Paths.get(CreateUnit.FILE_NAME));
         } catch (IOException ioe) {
             throw new RuntimeException(ioe);
         }

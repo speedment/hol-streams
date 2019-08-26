@@ -8,10 +8,12 @@ public interface TerminalUnit {
     // Do Stuff
 
     /**
-     * Adds each element in the provided Stream to the provided Set.
+     * Adds each element in the provided Stream
+     * to the provided Set.
      * <p>
-     * An input stream of ["A", "B", "C"] and an empty input Set will
-     * modify the input Set to contain : ["A", "B", "C"]
+     * An input stream of ["A", "B", "C"] and an
+     * empty input Set will modify the input Set
+     * to contain : ["A", "B", "C"]
      *
      * @param stream with input elements
      * @param set to add elements to

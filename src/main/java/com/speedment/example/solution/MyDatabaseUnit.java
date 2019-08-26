@@ -78,13 +78,4 @@ public final class MyDatabaseUnit implements DatabaseUnit {
             );
     }
 
-    /*
-
-    @Override
-    public List<Film> longFilms(FilmManager films) {
-        return films.stream()
-            .filter(Film.LENGTH.greaterThan(120))
-            .collect(toList());
-    }*/
-
 }
