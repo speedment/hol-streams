@@ -21,42 +21,32 @@ public final class MyDatabaseUnit implements DatabaseUnit {
 
     @Override
     public FilmManager films(Speedment speedment) {
-        return speedment.getOrThrow(FilmManager.class);
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public long countAllFilms(FilmManager films) {
-        return films.stream().count();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public long countPg13Films(FilmManager films) {
-        return films.stream()
-            .filter(Film.RATING.equal("PG-13"))
-            .count();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public List<Film> fiveLongFilms(FilmManager films) {
-        return films.stream()
-            .filter(Film.LENGTH.greaterThan(120))
-            .limit(5)
-            .collect(toList());
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public List<Film> secondPageOf20OrderByTitle(FilmManager films) {
-        return films.stream()
-            .sorted(Film.TITLE)
-            .skip(20)
-            .limit(20)
-            .collect(toList());
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public Map<String, Long> frequencyTableOfRating(FilmManager films) {
-        return films.stream()
-            .collect(groupingBy(Film.RATING, counting()));
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -72,10 +62,7 @@ public final class MyDatabaseUnit implements DatabaseUnit {
             .innerJoinOn(Actor.ACTOR_ID).equal(FilmActor.ACTOR_ID)
             .build(Tuples::of);
 
-        return join.stream()
-            .collect(
-                groupingBy(Tuple3::get2, counting())
-            );
+        throw new UnsupportedOperationException();
     }
 
 }

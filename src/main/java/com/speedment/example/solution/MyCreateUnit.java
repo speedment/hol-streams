@@ -14,45 +14,41 @@ public final class MyCreateUnit implements CreateUnit {
 
     @Override
     public Stream<String> newStreamOfAToC() {
-        return Stream.of("A", "B", "C");
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public IntStream newIntStreamOfOneToSeven() {
-        return IntStream.range(1, 8);
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public Stream<String> from(String[] array) {
-        return Stream.of(array);
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public Stream<String> from(Collection<String> collection) {
-        return collection.stream();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public IntStream infiniteAlternating() {
-        return IntStream.iterate(1, l -> l * -1);
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public IntStream from(String s) {
-        return s.chars();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public IntStream infiniteRandomInts(Random rnd) {
-        return rnd.ints();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public Stream<String> linesFromPoemTxtFile() {
-        try {
-            return Files.lines(Paths.get(FILE_NAME));
-        } catch (IOException ioe) {
-            throw new RuntimeException(ioe);
-        }
+        throw new UnsupportedOperationException();
     }
 }
