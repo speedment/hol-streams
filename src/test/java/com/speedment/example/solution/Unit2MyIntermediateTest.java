@@ -1,6 +1,6 @@
 package com.speedment.example.solution;
 
-import com.speedment.example.unit.IntermediateUnit;
+import com.speedment.example.unit.Unit2Intermediate;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -16,13 +16,13 @@ import java.util.Random;
 import java.util.stream.IntStream;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-final class MyIntermediateUnitTest {
+final class Unit2MyIntermediateTest {
 
     private static final List<String> WORDS = Arrays.asList(
         "The", "quick", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog"
         );
 
-    private final IntermediateUnit instance = new MyIntermediateUnit();
+    private final Unit2Intermediate instance = new Unit2MyIntermediate();
 
     @Test
     @Order(0)

@@ -1,79 +1,77 @@
 package com.speedment.example.solution;
 
-import com.speedment.example.unit.TerminalUnit;
+import com.speedment.example.unit.Unit3Terminal;
 
 import java.util.*;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static java.util.stream.Collectors.*;
+import static java.util.Collections.*;
 
-public final class MyTerminalUnit implements TerminalUnit {
+public final class Unit3MyTerminal implements Unit3Terminal {
 
     @Override
     public void addToSet(Stream<String> stream, Set<String> set) {
-        throw new UnsupportedOperationException();
+
     }
 
     @Override
     public void addToListInOrder(Stream<String> stream, List<String> list) {
-        throw new UnsupportedOperationException();
+
     }
 
     @Override
     public Set<String> collectToSet(Stream<String> stream) {
-        throw new UnsupportedOperationException();
+        return emptySet();
     }
 
     @Override
     public List<String> collectToList(Stream<String> stream) {
-        throw new UnsupportedOperationException();
+        return emptyList();
     }
 
     @Override
     public String collectJoining(Stream<String> stream) {
-        throw new UnsupportedOperationException();
+        return null;
     }
 
     @Override
     public String[] toArray(Stream<String> stream) {
-        throw new UnsupportedOperationException();
+        return new String[0];
     }
 
     @Override
     public Map<String, Integer> collectToMap(Stream<String> stream) {
-        throw new UnsupportedOperationException();
+        return emptyMap();
     }
 
     @Override
     public int countCharacters(Stream<String> stream) {
-        throw new UnsupportedOperationException();
+        return 0;
     }
 
     @Override
     public int maxWordLen(Stream<String> stream) {
-        throw new UnsupportedOperationException();
+        return 0;
     }
 
     @Override
     public IntSummaryStatistics statistics(Stream<String> stream) {
-        throw new UnsupportedOperationException();
+        return new IntSummaryStatistics();
     }
 
     @Override
     public Optional<String> findLongestString(Stream<String> stream) {
-        throw new UnsupportedOperationException();
+        return Optional.empty();
     }
 
     @Override
     public Map<Integer, List<String>> wordsGroupedByLength(Stream<String> stream) {
-        throw new UnsupportedOperationException();
+        return emptyMap();
     }
 
     @Override
     public Map<Integer, Long> wordsGroupedByLengthCounted(Stream<String> stream) {
-        throw new UnsupportedOperationException();
+        return emptyMap();
     }
 
 }

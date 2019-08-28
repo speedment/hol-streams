@@ -3,7 +3,7 @@ package com.speedment.example.unit;
 import java.util.*;
 import java.util.stream.Stream;
 
-public interface TerminalUnit {
+public interface Unit3Terminal {
 
     // Do Stuff
 

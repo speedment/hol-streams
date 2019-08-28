@@ -10,7 +10,9 @@ import java.util.Map;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
-public interface ExtraUnit {
+public interface Unit5Extra {
+
+    Map<Actor, Long> actorToFilmCount(JoinComponent joinComponent);
 
     /**
      * Creates and returns a new Map with Actors as keys and

@@ -1,7 +1,6 @@
 package com.speedment.example.solution;
 
-import com.speedment.example.demo.Create;
-import com.speedment.example.unit.CreateUnit;
+import com.speedment.example.unit.Unit1Create;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -20,9 +19,9 @@ import static com.speedment.example.solution.TestUtil.tester;
 import static java.util.stream.Collectors.toList;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-final class MyCreateUnitTest {
+final class Unit1MyCreateTest {
 
-    private final CreateUnit instance = new MyCreateUnit();
+    private final Unit1Create instance = new Unit1MyCreate();
 
     @Test
     @Order(0)
@@ -30,18 +29,18 @@ final class MyCreateUnitTest {
         tester(
             instance,
             Stream.of("A", "B", "C"),
-            CreateUnit::newStreamOfAToC,
+            Unit1Create::newStreamOfAToC,
             s -> s.collect(toList())
         );
     }
 
     @Test
     @Order(1)
-    void intStreamOfOneToTen() {
+    void intStreamOfOneToSeven() {
         tester(
             instance,
             IntStream.of(1, 2, 3, 4, 5, 6, 7),
-            CreateUnit::newIntStreamOfOneToSeven,
+            Unit1Create::newIntStreamOfOneToSeven,
             s -> s.boxed().collect(toList())
         );
     }
@@ -114,7 +113,13 @@ final class MyCreateUnitTest {
         tester(
             instance,
             expectedLinesFromPoemTxtFile() ,
-            CreateUnit::linesFromPoemTxtFile,
+            i -> {
+                try {
+                    return i.linesFromPoemTxtFile();
+                } catch (IOException ignore) {
+                    throw new RuntimeException(ignore);
+                }
+            },
             s -> s.collect(toList())
         );
         expectedLinesFromPoemTxtFile().forEach(System.out::println);
@@ -122,7 +127,7 @@ final class MyCreateUnitTest {
 
     private Stream<String> expectedLinesFromPoemTxtFile() {
         try {
-            return Files.lines(Paths.get(CreateUnit.FILE_NAME));
+            return Files.lines(Paths.get(Unit1Create.FILE_NAME));
         } catch (IOException ioe) {
             throw new RuntimeException(ioe);
         }

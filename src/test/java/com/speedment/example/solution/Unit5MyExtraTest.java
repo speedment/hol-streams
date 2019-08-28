@@ -1,12 +1,13 @@
 package com.speedment.example.solution;
 
 import com.speedment.common.tuple.Tuple2;
+import com.speedment.common.tuple.Tuple3;
 import com.speedment.common.tuple.Tuples;
 import com.speedment.example.domainmodel.sakila.sakila.sakila.actor.Actor;
 import com.speedment.example.domainmodel.sakila.sakila.sakila.film.Film;
 import com.speedment.example.domainmodel.sakila.sakila.sakila.film_actor.FilmActor;
 import com.speedment.example.domainmodel.sakila.sakila.sakila.film_actor.FilmActorManager;
-import com.speedment.example.unit.ExtraUnit;
+import com.speedment.example.unit.Unit5Extra;
 import com.speedment.runtime.join.Join;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
@@ -26,12 +27,30 @@ import static java.util.stream.Collectors.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-final class MyExtraUnitTest extends AbstractDatabaseUnitTest {
+final class Unit5MyExtraTest extends AbstractDatabaseUnitTest {
 
-    private final ExtraUnit instance = new MyExtraUnit();
+    private final Unit5Extra instance = new Unit5MyExtra();
 
     @Test
     @Order(0)
+    void actorToFilmCount() {
+        final Join<Tuple3<FilmActor, Film, Actor>> join = joinComponent
+            .from(FilmActorManager.IDENTIFIER)
+            .innerJoinOn(Film.FILM_ID).equal(FilmActor.FILM_ID)
+            .innerJoinOn(Actor.ACTOR_ID).equal(FilmActor.ACTOR_ID)
+            .build(Tuples::of);
+
+        final Map<Actor, Long> expected = join.stream()
+            .collect(
+                groupingBy(Tuple3::get2, counting())
+            );
+
+        tester(expected, instance.actorToFilmCount(joinComponent));
+    }
+
+
+    @Test
+    @Order(1)
     void filmographies() {
         final Map<Actor, List<Film>> expected = join().stream()
             .collect(
@@ -50,7 +69,7 @@ final class MyExtraUnitTest extends AbstractDatabaseUnitTest {
     }
 
     @Test
-    @Order(1)
+    @Order(2)
     void filmographiesNames() {
         final Map<String, List<String>> expected = join().stream()
             .collect(
@@ -82,7 +101,7 @@ final class MyExtraUnitTest extends AbstractDatabaseUnitTest {
 
 
     @Test
-    @Order(2)
+    @Order(3)
     void pivot() {
         final Map<Actor, Map<String, Long>> expected = join().stream()
             .collect(
@@ -108,7 +127,7 @@ final class MyExtraUnitTest extends AbstractDatabaseUnitTest {
         tester(
             instance,
             IntStream.rangeClosed(1, 21).mapToLong(n -> LongStream.range(1, n).reduce(1, (a, b) -> a * b)),
-            ExtraUnit::factorials,
+            Unit5Extra::factorials,
             s -> s.boxed().collect(toList())
         );
     }

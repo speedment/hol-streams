@@ -13,8 +13,8 @@ public final class Create {
 
     public static void main(String[] args) {
 
-        List<String> list = Stream.of("One", "Two", "Three")
-            .filter(s -> s.startsWith("T"))
+        List<String> list = Stream.of("Monkey", "Lion", "Giraffe", "Lemur")
+            .filter(s -> s.startsWith("L"))
             .map(String::toUpperCase)
             .sorted()
             .collect(toList());
@@ -29,16 +29,16 @@ public final class Create {
 
     private static void create() {
         {
-            Stream<String> stream = Stream.of("One", "Two", "Three");
-            String[] array = {"One", "Two", "Three"};
+            Stream<String> stream = Stream.of("Monkey", "Lion", "Giraffe", "Lemur");
+            String[] array = {"Monkey", "Lion", "Giraffe", "Lemur"};
             Stream<String> stream2 = Stream.of(array);
         }
 
         {
-            List<String> list = Arrays.asList("One", "Two", "Three");
+            List<String> list = Arrays.asList("Monkey", "Lion", "Giraffe", "Lemur");
             Stream<String> streamFromList = list.stream();
 
-            Set<String> set =  new HashSet<>(Arrays.asList("One", "Two", "Three"));
+            Set<String> set =  new HashSet<>(Arrays.asList("Monkey", "Lion", "Giraffe", "Lemur"));
             Stream<String> streamFromSet = set.stream();
         }
         {
@@ -67,7 +67,9 @@ public final class Create {
             IntStream positiveSingleDigits = IntStream.rangeClosed(1, 9);
             IntStream powersOfTwo = IntStream.iterate(1, i -> i * 2);
             IntStream chars =  "ABC".chars();
+            IntStream randomInts = new Random().ints();
         }
+
 
 
 

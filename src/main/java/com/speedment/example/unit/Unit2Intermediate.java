@@ -3,7 +3,7 @@ package com.speedment.example.unit;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public interface IntermediateUnit {
+public interface Unit2Intermediate {
 
     /**
      * Return a Stream that contains words that are
@@ -40,8 +40,8 @@ public interface IntermediateUnit {
 
     /**
      * Return a Stream that contains the first two distinct words words that are longer than
-     * three characters sorted in alphabetical order. Shorter words
-     * (i.g. words of length 0, 1, 2 and 3)shall be filtered away from the stream.
+     * three character. Lastly, the remaining elements shall be sorted in alphabetical order.
+     * Shorter words (i.g. words of length 0, 1, 2 and 3) shall be filtered away from the stream.
      * <p>
      *  A Stream of
      *      ["The", "quick", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog"]
@@ -50,7 +50,8 @@ public interface IntermediateUnit {
      *
      * @param stream input of words
      * @return that contains the first two distinct words words that are longer than
-     *         three characters sorted in alphabetical order
+     *         three characters sorted in alphabetical order Lastly, the remaining
+     *         elements shall be sorted in alphabetical order
      */
     Stream<String> firstDistinctTwoWordsLongerThanThreeCharsInAlphabeticOrder(Stream<String> stream);
 

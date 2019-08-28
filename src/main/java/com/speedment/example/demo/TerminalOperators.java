@@ -13,14 +13,14 @@ public class TerminalOperators {
     public static void main(String[] args) {
 
         Stream.of(
-            "One", "Two", "Three", "Thirteen"
+            "Monkey", "Lion", "Giraffe", "Lemur", "Lion"
         )
             .forEachOrdered(System.out::print);
 
         System.out.println();
 
         Set<String> collectToSet = Stream.of(
-            "One", "Two", "Three", "Thirteen"
+            "Monkey", "Lion", "Giraffe", "Lemur", "Lion"
         )
             .collect(Collectors.toSet());
 
@@ -28,21 +28,21 @@ public class TerminalOperators {
 
 
         List<String> collectToList = Stream.of(
-            "One", "Two", "Three", "Thirteen"
+            "Monkey", "Lion", "Giraffe", "Lemur", "Lion"
         )
             .collect(Collectors.toList());
 
         print("collectToList", collectToList);
 
         LinkedList<String> collectToCollection = Stream.of(
-            "One", "Two", "Three", "Thirteen"
+            "Monkey", "Lion", "Giraffe", "Lemur", "Lion"
         )
             .collect(Collectors.toCollection(LinkedList::new));
 
         print("collectToCollection", collectToCollection);
 
         String collectJoining = Stream.of(
-            "One", "Two", "Three", "Thirteen"
+            "Monkey", "Lion", "Giraffe", "Lemur", "Lion"
         )
             .collect(Collectors.joining("+", "<", ">"));
 
@@ -50,7 +50,7 @@ public class TerminalOperators {
 
 
         StringBuilder collectCustom = Stream.of(
-            "One", "Two", "Three", "Thirteen"
+            "Monkey", "Lion", "Giraffe", "Lemur", "Lion"
         )
             .collect(
                 StringBuilder::new,    // Supplier
@@ -62,7 +62,7 @@ public class TerminalOperators {
 
 
         String[] toArray = Stream.of(
-            "One", "Two", "Three", "Thirteen"
+            "Monkey", "Lion", "Giraffe", "Lemur", "Lion"
         )
             .toArray(String[]::new);
 
@@ -70,8 +70,9 @@ public class TerminalOperators {
 
 
         Map<String, Integer> toMap = Stream.of(
-            "One", "Two", "Three", "Thirteen"
+            "Monkey", "Lion", "Giraffe", "Lemur", "Lion"
         )
+            .distinct()
             .collect(Collectors.toMap(
                 Function.identity(),
                 s -> (int) s.chars().distinct().count()
@@ -92,14 +93,14 @@ public class TerminalOperators {
 
 
         Optional<String> reduce = Stream.of(
-            "One", "Two", "Three", "Thirteen"
+            "Monkey", "Lion", "Giraffe", "Lemur", "Lion"
         )
             .reduce((result, element) -> result.charAt(0) >= element.charAt(0) ? result : element);
 
         print("reduce", reduce);
 
         Map<Character, List<String>> groupingByList =  Stream.of(
-            "One", "Two", "Three", "Thirteen"
+            "Monkey", "Lion", "Giraffe", "Lemur", "Lion"
         )
             // Apply this Classifier
             .collect(Collectors.groupingBy(
@@ -109,7 +110,7 @@ public class TerminalOperators {
         print("groupingByList", groupingByList);
 
         Map<Character, Long> groupingByCounting =  Stream.of(
-            "One", "Two", "Three", "Thirteen"
+            "Monkey", "Lion", "Giraffe", "Lemur", "Lion"
         )
             .collect(Collectors.groupingBy(
                 s -> s.charAt(0), // Classifier

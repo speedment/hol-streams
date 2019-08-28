@@ -43,6 +43,32 @@ public final class DatabaseStreams {
 
         List<Film> allFilms = films.stream().collect(toList());
 
+        Optional<Film> longestFilm = films.stream()
+            .max(Film.LENGTH);
+
+        TerminalOperators.print("longestFilm", longestFilm);
+
+        long rFilmCount = films.stream()
+            .filter(Film.RATING.equal("R"))
+            .count();
+
+        TerminalOperators.print("rFilmCount", rFilmCount);
+
+        List<Film> threeShortFilms = films.stream()
+            .filter(Film.LENGTH.lessOrEqual(50))
+            .limit(3)
+            .collect(toList());
+
+        TerminalOperators.print("threeShortFilms", threeShortFilms);
+
+        List<Film> filmsSortedByLengthPage2 = films.stream()
+            .sorted(Film.LENGTH)
+            .skip(25 * 1)
+            .limit(25)
+            .collect(toList());
+
+        TerminalOperators.print("filmsSortedByLengthPage2", filmsSortedByLengthPage2);
+
         List<Film> filmsTitleStartsWithA = films.stream()
             .filter(Film.TITLE.startsWith("A"))
             .filter(f -> f.getTitle().startsWith("A"))
@@ -58,6 +84,7 @@ public final class DatabaseStreams {
             ));
 
         TerminalOperators.print("frequencyTableOfLength", frequencyTableOfLength);
+
 
         Join<Tuple3<FilmActor, Film, Actor>> join = joinComponent
             .from(FilmActorManager.IDENTIFIER)

@@ -11,57 +11,57 @@ public class IntermediateOperators {
     public static void main(String[] args) {
 
         Stream<String> startsWithT = Stream.of(
-            "One", "Two", "Three", "Thirteen"
+            "Monkey", "Lion", "Giraffe", "Lemur"
         )
-            .filter(s -> s.startsWith("T"));
+            .filter(s -> s.startsWith("L"));
 
-        print("startsWithT", startsWithT);
+        print("startsWithL", startsWithT);
 
         Stream<String> firstTwoStartsWithT = Stream.of(
-            "One", "Two", "Three", "Thirteen"
+            "Monkey", "Lion", "Giraffe", "Lemur"
         )
-            .filter(s -> s.startsWith("T"))
+            .filter(s -> s.startsWith("L"))
             .limit(2);
 
-        print("firstTwoStartsWithT", firstTwoStartsWithT);
+        print("firstTwoStartsWithL", firstTwoStartsWithT);
 
         Stream<String> alphabeticOrder = Stream.of(
-            "One", "Two", "Three", "Thirteen"
+            "Monkey", "Lion", "Giraffe", "Lemur"
         )
             .sorted();
 
         print("alphabeticOrder", alphabeticOrder);
 
         Stream<String> lengthOrder = Stream.of(
-            "One", "Two", "Three", "Thirteen"
+            "Monkey", "Lion", "Giraffe", "Lemur"
         )
             .sorted(Comparator.comparing(String::length));
 
         print("lengthOrder", lengthOrder);
 
         Stream<String> lowerCase = Stream.of(
-            "One", "Two", "Three", "Thirteen"
+            "Monkey", "Lion", "Giraffe", "Lemur"
         )
             .map(String::toLowerCase);
 
         print("lowerCase", lowerCase);
 
         IntStream lengths = Stream.of(
-            "One", "Two", "Three", "Thirteen"
+            "Monkey", "Lion", "Giraffe", "Lemur"
         )
             .mapToInt(String::length);
 
         print("lengths", lengths);
 
         IntStream uniqueChars = Stream.of(
-            "One", "Two", "Three", "Thirteen"
+            "Monkey", "Lion", "Giraffe", "Lemur"
         )
             .mapToInt(s -> (int) s.chars().distinct().count());
 
         print("uniqueChars", uniqueChars);
 
         Stream<Character> chars = Stream.of(
-            "One", "Two", "Three", "Thirteen"
+            "Monkey", "Lion", "Giraffe", "Lemur"
         )
             .flatMap(s -> s.chars().mapToObj(i -> (char) i));
 

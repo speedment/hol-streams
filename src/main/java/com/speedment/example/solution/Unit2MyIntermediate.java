@@ -1,39 +1,39 @@
 package com.speedment.example.solution;
 
-import com.speedment.example.unit.IntermediateUnit;
+import com.speedment.example.unit.Unit2Intermediate;
 
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public final class MyIntermediateUnit implements IntermediateUnit {
+public final class Unit2MyIntermediate implements Unit2Intermediate {
 
     @Override
     public Stream<String> wordsLongerThanThreeChars(Stream<String> stream) {
-        return stream.filter(s -> s.length() > 3);
+        return Stream.empty();
     }
 
     @Override
     public Stream<String> firstTwoWordsLongerThanThreeChars(Stream<String> stream) {
-        throw new UnsupportedOperationException();
+        return Stream.empty();
     }
 
     @Override
     public Stream<String> firstDistinctTwoWordsLongerThanThreeCharsInAlphabeticOrder(Stream<String> stream) {
-        throw new UnsupportedOperationException();
+        return Stream.empty();
     }
 
     @Override
     public IntStream lengthOfWords(Stream<String> stream) {
-        throw new UnsupportedOperationException();
+        return IntStream.empty();
     }
 
     @Override
     public IntStream increasingSawtooth() {
-        throw new UnsupportedOperationException();
+        return IntStream.empty();
     }
 
     @Override
     public Stream<String> strings(Stream<Object> stream) {
-        throw new UnsupportedOperationException();
+        return Stream.empty();
     }
 }

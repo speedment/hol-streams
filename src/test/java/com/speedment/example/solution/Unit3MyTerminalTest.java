@@ -1,6 +1,6 @@
 package com.speedment.example.solution;
 
-import com.speedment.example.unit.TerminalUnit;
+import com.speedment.example.unit.Unit3Terminal;
 import org.junit.jupiter.api.*;
 
 import java.util.*;
@@ -11,13 +11,13 @@ import static com.speedment.example.solution.TestUtil.tester;
 import static java.util.stream.Collectors.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-final class MyTerminalUnitTest {
+final class Unit3MyTerminalTest {
 
     private static final List<String> ABC = Arrays.asList("A", "B", "C");
     private static final List<String> THE_RAIN_IN_SPAIN = Arrays.asList("The", "rain", "in", "Spain", "stays");
     private static final List<String> BEATLES_AND_ABBA = Arrays.asList("Beatles", "Abba");
 
-    private final TerminalUnit instance = new MyTerminalUnit();
+    private final Unit3Terminal instance = new Unit3MyTerminal();
 
     @Test
     @Order(0)
@@ -82,7 +82,7 @@ final class MyTerminalUnitTest {
     @Test
     @Order(9)
     void statistics() {
-        tester(THE_RAIN_IN_SPAIN.stream().mapToInt(String::length).summaryStatistics(), instance.statistics(THE_RAIN_IN_SPAIN.stream()), MyTerminalUnitTest::assertIntSummaryStatisticsEquals);
+        tester(THE_RAIN_IN_SPAIN.stream().mapToInt(String::length).summaryStatistics(), instance.statistics(THE_RAIN_IN_SPAIN.stream()), Unit3MyTerminalTest::assertIntSummaryStatisticsEquals);
     }
 
     @Test
