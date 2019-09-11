@@ -63,9 +63,9 @@ final class Unit4MyDatabaseTest extends AbstractDatabaseUnitTest {
 
     @Test
     @Order(5)
-    void filmsSortedByTitleThirdPage() {
-        final List<Film> expected = films.stream().sorted(Film.TITLE).skip(20).limit(10).collect(Collectors.toList());
-        final List<Film> actual = instance.filmsSortedByTitleThirdPage(films);
+    void filmsSortedByLengthThirdPage() {
+        final List<Film> expected = films.stream().sorted(Film.LENGTH).skip(20).limit(10).collect(Collectors.toList());
+        final List<Film> actual = instance.filmsSortedByLengthThirdPage(films);
         tester(expected, actual);
     }
 

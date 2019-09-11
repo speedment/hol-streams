@@ -50,13 +50,15 @@ public interface Unit4Database {
 
     /**
      * Creates and returns a new List of Films sorted by
-     * Film.TITLE and just 10 films starting from the
-     * 20:th film where the films are sorted by Film.TITLE.
+     * Film.LENGTH and just 10 films starting from the
+     * 20:th film where the films are sorted by Film.LENGTH.
      *
      * @param films manager of film entities
-     * @return a
+     * @return a new List of Films sorted by
+     *         Film.LENGTH and just 10 films starting from the
+     *         20:th film where the films are sorted by Film.LENGTH
      */
-    List<Film> filmsSortedByTitleThirdPage(FilmManager films);
+    List<Film> filmsSortedByLengthThirdPage(FilmManager films);
 
     /**
      * Creates and returns a new Map with Film.RATING as keys and

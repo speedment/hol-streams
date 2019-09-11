@@ -33,7 +33,7 @@ public final class Unit4MyDatabase implements Unit4Database {
     }
 
     @Override
-    public List<Film> filmsSortedByTitleThirdPage(FilmManager films) {
+    public List<Film> filmsSortedByLengthThirdPage(FilmManager films) {
         return emptyList();
     }
 
