@@ -56,6 +56,7 @@ final class Unit4MyDatabaseTest extends AbstractDatabaseUnitTest {
     void fiveLongFilms() {
         final Set<String> candidates = films.stream().filter(Film.LENGTH.greaterThan(120)).map(Film.TITLE).collect(Collectors.toSet());
         final List<String> actual = instance.fiveLongFilms(films);
+        assertEquals(5, actual.size());
         assertTrue(candidates.containsAll(actual));
         System.out.format("The database contained %d long films, some of these were: %s%n", candidates.size(), actual);
     }
