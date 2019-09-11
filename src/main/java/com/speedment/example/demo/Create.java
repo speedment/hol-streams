@@ -22,7 +22,7 @@ public final class Create {
         System.out.println(list);
 
         // This will produce the following output:
-        // [Three, Two]
+        // [LEMUR, LION]
 
         create();
     }
