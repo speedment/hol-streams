@@ -20,7 +20,7 @@ public class IntermediateOperators {
         Stream<String> firstTwoStartsWithT = Stream.of(
             "Monkey", "Lion", "Giraffe", "Lemur"
         )
-            .filter(s -> s.startsWith("L"))
+            .filter(s -> s.startsWith("L")) // Predicate<String>
             .limit(2);
 
         print("firstTwoStartsWithL", firstTwoStartsWithT);
@@ -42,14 +42,14 @@ public class IntermediateOperators {
         Stream<String> lowerCase = Stream.of(
             "Monkey", "Lion", "Giraffe", "Lemur"
         )
-            .map(String::toLowerCase);
+            .map(String::toLowerCase); // Function<T, R>
 
         print("lowerCase", lowerCase);
 
         IntStream lengths = Stream.of(
             "Monkey", "Lion", "Giraffe", "Lemur"
         )
-            .mapToInt(String::length);
+            .mapToInt(String::length); // ToIntFunction<T>
 
         print("lengths", lengths);
 
@@ -63,7 +63,7 @@ public class IntermediateOperators {
         Stream<Character> chars = Stream.of(
             "Monkey", "Lion", "Giraffe", "Lemur"
         )
-            .flatMap(s -> s.chars().mapToObj(i -> (char) i));
+            .flatMap(s -> s.chars().mapToObj(i -> (char) i)); // Function<T, Stream<R>>
 
         print("chars", chars);
 
