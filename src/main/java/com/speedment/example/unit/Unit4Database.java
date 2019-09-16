@@ -42,8 +42,8 @@ public interface Unit4Database {
      * Strings that has a Film.LENGTH greater than 120 minutes.
      *
      * @param films manager of film entities
-     * @return a new List of five Film
-     *         entities that has a Film.LENGTH
+     * @return a new List of five Film.TITLE
+     *         Strings that has a Film.LENGTH
      *         greater than 120 minutes
      */
     List<String> fiveLongFilms(FilmManager films);
