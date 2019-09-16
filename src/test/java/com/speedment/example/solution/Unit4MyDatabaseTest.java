@@ -44,7 +44,7 @@ final class Unit4MyDatabaseTest extends AbstractDatabaseUnitTest {
     @Test
     @Order(3)
     void tenKidsFilms() {
-        final Set<Film> candidates = films.stream().filter(Film.RATING.equal("PG-13")).collect(Collectors.toSet());
+        final Set<Film> candidates = films.stream().filter(Film.RATING.equal("G")).collect(Collectors.toSet());
         final List<Film> actual = instance.tenKidsFilms(films);
         assertEquals(10, actual.size(), "The list contained " + actual.size() + " elements");
         assertTrue(candidates.containsAll(actual));
