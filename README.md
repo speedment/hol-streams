@@ -21,6 +21,9 @@ The Interfaces describe the desired behavior of the corresponding Java Implement
 - Implement the declared methods in the Solutions folder
 - Run the tests to see if you passed.
 
+![Running-Tests](https://github.com/speedment/hol-streams/blob/master/HOL-Streams.png?raw=true "Screenshot of test environment ")
+*Screenshot of IntelliJ after execution of Unit 4 tests.*
+
 ### Requirements
 Running the source-code requires a recent version of Maven and Java 8 or later. 
 
