@@ -10,6 +10,7 @@ import org.junit.jupiter.api.TestMethodOrder;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 import static com.speedment.example.solution.TestUtil.tester;
