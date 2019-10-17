@@ -2,7 +2,7 @@
 This repository contains Java Stream exercises divided into five units which each correspond to a different topic covered in an article series on Dzone, see links below.
 
 - **Unit 1:** [Creating a Stream](https://dzone.com/articles/become-a-master-of-java-streams-part-1-creating-st)<br/>
-- **Unit 2:** [Terminal Operations](https://dzone.com/articles/become-a-master-of-java-streams-part-2-intermediat)<br/>
+- **Unit 2:** [Intermediate Operations](https://dzone.com/articles/become-a-master-of-java-streams-part-2-intermediat)<br/>
 - **Unit 3:** Terminal Operations<br/>
 - **Unit 4:** Database Streams<br/>
 - **Unit 5:** Extra Database Exercise 
