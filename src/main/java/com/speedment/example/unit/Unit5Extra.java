@@ -12,6 +12,21 @@ import java.util.stream.Stream;
 
 public interface Unit5Extra {
 
+    /**
+     * Creates and returns a new Map with Actors as keys and
+     * a the total number of Films in which they appear as values.
+     * <p>
+     * The result might look like this:
+     *
+     * ActorImpl { actorId = 126, firstName = FRANCES, lastName = TOMEI, ... }=23
+     * ActorImpl { actorId = 77, firstName = CARY, lastName = MCCONAUGHEY, ... }=24
+     * ActorImpl { actorId = 140, firstName = WHOOPI, lastName = HURT, ... }=32
+     * ...
+     *
+     * @param joinComponent for data input
+     * @return a new Map with Actors as keys and
+     *         a the number of Films in which they appear as values
+     */
     Map<Actor, Long> actorToFilmCount(JoinComponent joinComponent);
 
     /**
