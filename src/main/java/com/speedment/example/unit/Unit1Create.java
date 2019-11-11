@@ -19,7 +19,7 @@ public interface Unit1Create {
 
     /**
      * Creates a new IntStream that contains the int elements
-     * from zero (inclusive) to seven (inclusive) in order.
+     * from one (inclusive) to seven (inclusive) in order.
      *
      * @return a new IntStream that contains the int elements
      *         from one (inclusive) to seven (inclusive) in order
