@@ -3,5 +3,5 @@ title: Hands On Lab Streams
 version: dev
 nav:
   - modules/ROOT/nav.adoc
-  - modules/gettings-started/nav.adoc
+  - modules/getting-started/nav.adoc
   - modules/java-streams/nav.adoc
