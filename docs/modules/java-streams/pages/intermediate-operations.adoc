@@ -1,0 +1,23 @@
+= Intermediate Operators
+
+== Filter
+A filter operator evaluates a predicate on every every element of the stream. `filter()`.
+
+[source, java]
+----
+FilmManager films = app.getOrThrow(FilmManager.class); # <1>
+
+List<Film> filmsThatStartsWithA = films.stream()
+    .filter(Film.TITLE.startsWith("A")) # <2>
+    .collect(Collectors.toList()); # <3>
+----
+<1> Handle to the database table Film
+<2> A filter is applied to retrieve films with a title that starts with A
+<3> The elements are collected in a list
+
+NOTE: This stream is rendered to a SQL query
+
+== Sort
+
+== Limit
+

@@ -1,0 +1,5 @@
+* xref:[Sources]
+** xref:steam-source.adoc[Stream Sources]
+* xref:[Operators]
+** xref:intermediate-operations.adoc[Intermediate Operators]
+** xref:terminal-operations.adoc[Terminal Operators]
