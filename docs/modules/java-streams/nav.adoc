@@ -1,5 +1,6 @@
-* Sources
-** xref:steam-source.adoc[Stream Sources]
-* Operators
-** xref:intermediate-operations.adoc[Intermediate Operators]
-** xref:terminal-operations.adoc[Terminal Operators]
+* Java Streams
+** Sources
+*** xref:steam-source.adoc[Stream Sources]
+** Operators
+*** xref:intermediate-operations.adoc[Intermediate Operators]
+*** xref:terminal-operations.adoc[Terminal Operators]

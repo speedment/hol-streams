@@ -1,2 +1,3 @@
-* xref:gradle.adoc[Gradle Installation]
-* xref:maven.adoc[Maven Installation]
+* Getting Started
+** xref:gradle.adoc[Gradle Installation]
+** xref:maven.adoc[Maven Installation]
